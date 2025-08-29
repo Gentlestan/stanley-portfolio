@@ -56,7 +56,7 @@ const About = () => {
         </h2>
         <div className="space-y-6 text-slate-300 text-base leading-relaxed text-center md:text-left">
           <p>
-            In late 2022, I started my frontend journey with{" "}
+            In 2023, I started my frontend journey with{" "}
             <span className="font-semibold text-indigo-400">
               Scrimba’s Frontend Developer Career Path
             </span>
@@ -108,7 +108,7 @@ const About = () => {
           Certifications
         </h2>
         <ul className="space-y-3 text-slate-300 text-base">
-        <li className="flex items-start gap-2">
+          <li className="flex items-start gap-2">
             <span className="text-emerald-400 mt-1">▹</span>
             <span>
               <strong>ALX</strong> – Professional Development Course

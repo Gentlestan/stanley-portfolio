@@ -6,7 +6,7 @@ const Testimonials = () => {
     {
       name: "SalesSkillHub",
       role: "EdTech Startup",
-      text: "Working with Onyebuchi was seamless. The portfolio he delivered showcased both creativity and technical depth.",
+      text: "Working with Stanley was seamless. The portfolio he delivered showcased both creativity and technical depth.",
       image: salesSkillHubLogo,
     },
     {
