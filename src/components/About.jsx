@@ -20,8 +20,9 @@ const About = () => {
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mt-6">
           <a
-            href="/resume.pdf"
+            href="/Stanley-Resume.pdf"
             target="_blank"
+             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg shadow-md"
           >
             <FileText size={18} /> Resume

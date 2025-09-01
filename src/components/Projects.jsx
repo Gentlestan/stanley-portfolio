@@ -22,8 +22,8 @@ const projects = [
     title: "Kitchen Companion",
     description:
       "A recipe browsing and meal-planning app built with React and Tailwind CSS. Includes search, favorites, and shopping list features for a seamless cooking experience.",
-    link: "https://recipe-finder-mauve-one.vercel.app/",
-    code: "https://github.com/yourusername/kitchen-companion",
+    link: "https://recipe-finder-zeta-eight.vercel.app/",
+    code: "https://github.com/Gentlestan/recipe-finder",
     image: kitchenCompanion,
     tech: ["React", "Tailwind", "TheMealDB API"],
   },
