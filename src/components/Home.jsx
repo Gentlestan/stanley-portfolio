@@ -4,6 +4,7 @@ import AboutPreview from "./sections/AboutPreview";
 import SkillsSection from "./sections/SkillSection";
 import Testimonials from "./sections/Testimonials";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
   return (
@@ -27,7 +28,19 @@ const Home = () => {
           </h1>
 
           <p className="text-slate-400 text-base sm:text-lg mb-3">
-            Frontend Developer with expertise in React, Tailwind <br /> and API Integration
+            <Typewriter
+              words={[
+                "Frontend Developer with expertise in React & Tailwind",
+                "React Enthusiast exploring modern web apps",
+                "UI/UX Explorer focused on user-friendly design",
+              ]}
+              loop={true}
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={2000}
+            />
           </p>
 
           <p className="text-cyan-400 text-lg italic mb-8">

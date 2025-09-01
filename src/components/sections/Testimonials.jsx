@@ -5,7 +5,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "SalesSkillHub",
-      role: "EdTech Startup",
+      role: "Tech Sales",
       text: "Working with Stanley was seamless. The portfolio he delivered showcased both creativity and technical depth.",
       image: salesSkillHubLogo,
     },
