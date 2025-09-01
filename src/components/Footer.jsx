@@ -7,7 +7,7 @@ const Footer = () => {
         
         {/* Brand */}
         <h2 className="text-xl font-extrabold text-emerald-600 tracking-wide">
-          Sales Skills-Hub
+          StarnDev
         </h2>
 
         {/* Social Links */}
