@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaYoutube } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-6 text-2xl">
           <a
-            href="https://www.linkedin.com/in/your-linkedin-username"
+            href="https://www.linkedin.com/in/ohazulike-stanley/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-emerald-600 transition-all duration-300 hover:scale-110 hover:drop-shadow-md"
@@ -21,7 +21,7 @@ const Footer = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com/your-github-username"
+            href="https://github.com/Gentlestan"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-emerald-600 transition-all duration-300 hover:scale-110 hover:drop-shadow-md"
@@ -29,12 +29,12 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://youtube.com/your-youtube-channel"
+            href="https://x.com/Gentlestan8"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-emerald-600 transition-all duration-300 hover:scale-110 hover:drop-shadow-md"
           >
-            <FaYoutube />
+            <FaXTwitter />
           </a>
         </div>
 
