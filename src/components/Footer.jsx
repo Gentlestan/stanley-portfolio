@@ -1,4 +1,5 @@
-import { FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -34,7 +35,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover:text-emerald-600 transition-all duration-300 hover:scale-110 hover:drop-shadow-md"
           >
-            <FaXTwitter />
+            <BsTwitterX />
           </a>
         </div>
 
