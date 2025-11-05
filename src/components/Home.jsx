@@ -6,6 +6,7 @@ import Testimonials from "./sections/Testimonials";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
+
 const Home = () => {
   return (
     <section className="bg-slate-900 px-1 sm:px-2 py-10 w-full text-gray-50">
