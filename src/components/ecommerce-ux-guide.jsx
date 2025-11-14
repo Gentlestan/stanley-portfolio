@@ -5,6 +5,7 @@ export default function EbookLandingPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState(""); // <-- toast message state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +21,12 @@ export default function EbookLandingPage() {
       const data = await res.json();
 
       if (data.success) {
-        window.location.href = "/ebook.pdf"; // ensure ebook.pdf is in /public
+        // Show toast
+        setToast("Thanks for subscribing! Your ebook is ready.");
+        // Auto-download PDF after 1.5s
+        setTimeout(() => {
+          window.location.href = "/ebook.pdf"; // make sure your PDF is in /public
+        }, 1500);
       } else {
         alert("Subscription failed. Please try again.");
       }
@@ -34,7 +40,6 @@ export default function EbookLandingPage() {
 
   return (
     <div className="bg-slate-900 text-slate-100 min-h-screen">
-
       {/* HERO */}
       <section className="max-w-5xl mx-auto py-20 px-6 text-center">
         <h1 className="text-4xl font-bold mb-4">
@@ -118,6 +123,13 @@ export default function EbookLandingPage() {
               {loading ? "Processing..." : "Download Now"}
             </button>
           </form>
+
+          {/* Toast message */}
+          {toast && (
+            <div className="mt-4 bg-emerald-500 text-white py-2 px-4 rounded-lg text-center transition-all">
+              {toast}
+            </div>
+          )}
         </div>
       </section>
     </div>
