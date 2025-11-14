@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 //import MotionWrapper from "./components/MotionWrapper";
 import MotionWrapper from "./components/ui/motionWrapper";
+import EbookLandingPage from "./components/ecommerce-ux-guide";
 import "./App.css";
 
 function AnimatedRoutes() {
@@ -18,9 +19,11 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<MotionWrapper><Home /></MotionWrapper>} />
+        <Route path="/ecommerce-ux-guide" element={<MotionWrapper><EbookLandingPage /></MotionWrapper>} />
         <Route path="/about" element={<MotionWrapper><About /></MotionWrapper>} />
         <Route path="/projects" element={<MotionWrapper><Projects /></MotionWrapper>} />
         <Route path="/contact" element={<MotionWrapper><Contact /></MotionWrapper>} />
+        
       </Routes>
     </AnimatePresence>
   );

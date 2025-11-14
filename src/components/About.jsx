@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import profileImg from "../assets/images/profile-img.jpg"; // your photo
 import Testimonials from "./sections/Testimonials";
+//import motion from "framer-motion";
 
 const About = () => {
   return (

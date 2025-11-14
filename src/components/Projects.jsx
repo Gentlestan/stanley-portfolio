@@ -5,6 +5,7 @@ import kitchenCompanion from "../assets/images/kitchencompanion.jpg";
 import SkillsSection from "./sections/SkillSection";
 import Testimonials from "./sections/Testimonials";
 import springmilez from "../assets/images/spring.jpg";
+import listing from "../assets/images/listing.jpg";
 
 const projects = [
   {
@@ -28,7 +29,18 @@ const projects = [
     tech: ["React", "Tailwind", "TheMealDB API"],
   },
   {
-    id: 3,
+  id: 3,
+  title: "Real Estate Listing App",
+  description:
+    "A modern property listing platform built with Next.js and TypeScript. Features dynamic routes, booking, and reviews, with data fetched from mock APIs. Designed for scalability, responsiveness, and real-world frontend workflows.",
+  link: "https://alx-listing-app-deployed-ten-livid.vercel.app/",
+  code: "https://github.com/Gentlestan/alx-listing-app-deployed",
+  image: listing,
+  tech: ["Next.js", "TypeScript", "Tailwind", "API Integration"],
+},
+
+  {
+    id: 4,
     title: "Springmillez Solar",
     description:
       "A responsive business website built with React to showcase solar, CCTV, and electrical services. The site highlights company offerings, past projects, and contact options, with a clean professional design optimized for speed, SEO, and mobile accessibility.",

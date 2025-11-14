@@ -46,9 +46,11 @@ const Navbar = () => {
       >
         {[
           { to: "/", label: "Home" },
+            { to: "/ecommerce-ux-guide", label: "E-Commerce UX Guide" },
           { to: "/about", label: "About Us" },
           { to: "/projects", label: "Projects" },
           { to: "/contact", label: "Contact Us" },
+        
         ].map(({ to, label }) => (
           <li key={to}>
             <Link
