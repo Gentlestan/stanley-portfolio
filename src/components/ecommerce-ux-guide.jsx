@@ -1,6 +1,37 @@
-import ebookcover from '../assets/images/ebookcover.png';
+import { useState } from "react";
+import ebookcover from "../assets/images/ebookcover.png";
 
 export default function EbookLandingPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/.netlify/functions/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        window.location.href = "/ebook.pdf"; // ensure ebook.pdf is in /public
+      } else {
+        alert("Subscription failed. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Try again.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="bg-slate-900 text-slate-100 min-h-screen">
 
@@ -12,7 +43,8 @@ export default function EbookLandingPage() {
         </h1>
 
         <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10">
-          A practical guide for e-commerce founders who want more clicks, conversions, and happy customers.
+          A practical guide for e-commerce founders who want more clicks,
+          conversions, and happy customers.
         </p>
 
         <img
@@ -21,12 +53,17 @@ export default function EbookLandingPage() {
           className="w-72 mx-auto shadow-xl rounded-lg mb-10 ring-4 ring-indigo-500/30"
         />
 
-        <a
-          href="#download"
+        {/* Scroll to form */}
+        <button
+          onClick={() =>
+            document
+              .getElementById("download")
+              .scrollIntoView({ behavior: "smooth" })
+          }
           className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition"
         >
           Download Free Guide
-        </a>
+        </button>
       </section>
 
       {/* VALUE SECTION */}
@@ -54,10 +91,12 @@ export default function EbookLandingPage() {
             Enter your details below to download the PDF.
           </p>
 
-          <form className="flex flex-col gap-4">
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="bg-slate-700 border border-slate-600 px-4 py-3 rounded-lg text-slate-100"
               required
             />
@@ -65,23 +104,22 @@ export default function EbookLandingPage() {
             <input
               type="email"
               placeholder="Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="bg-slate-700 border border-slate-600 px-4 py-3 rounded-lg text-slate-100"
               required
             />
 
             <button
               type="submit"
-              className="bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-lg font-semibold transition"
+              disabled={loading}
+              className="bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-lg font-semibold transition disabled:opacity-50"
             >
-              Download Now
+              {loading ? "Processing..." : "Download Now"}
             </button>
           </form>
         </div>
       </section>
-
     </div>
   );
 }
-
-
-
