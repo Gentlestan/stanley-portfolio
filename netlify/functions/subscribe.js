@@ -12,7 +12,7 @@ exports.handler = async (event) => {
 
   const API_KEY = process.env.MAILCHIMP_API_KEY;
   const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
-  const DATACENTER = API_KEY.split("-")[1]; // e.g., "us16"
+  const DATACENTER = API_KEY.split("-")[1];
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`;
 
@@ -32,15 +32,26 @@ exports.handler = async (event) => {
 
   const result = await response.json();
 
+  // --- UPDATED BLOCK ---
   if (response.status >= 400) {
+    console.log("Mailchimp error:", result);
+
+    if (result.title === "Member Exists") {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ success: true, message: "Already subscribed" }),
+      };
+    }
+
     return {
-      statusCode: 400,
-      body: JSON.stringify(result),
+      statusCode: response.status,
+      body: JSON.stringify({ success: false, error: result }),
     };
   }
+  // --------------------
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: "Success! You're subscribed." }),
+    body: JSON.stringify({ success: true, message: "Success! You're subscribed." }),
   };
 };
