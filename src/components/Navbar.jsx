@@ -15,11 +15,10 @@ const Navbar = () => {
         StarnDev
       </h1>
 
-      {/* Hamburger Icon */}
+      {/* Hamburger */}
       <button
-        className="flex flex-col justify-center items-center md:hidden space-y-1 bg-none border-none z-50"
+        className="flex flex-col justify-center items-center md:hidden space-y-1 z-50"
         onClick={toggleMenu}
-        aria-label="Toggle mobile menu"
       >
         <span
           className={`block w-6 h-[3px] bg-cyan-400 transition-transform duration-300 ${
@@ -38,19 +37,17 @@ const Navbar = () => {
         ></span>
       </button>
 
-      {/* Navigation Links */}
+      {/* Nav Links */}
       <ul
         className={`flex flex-col md:flex-row md:static absolute top-14 right-5 bg-slate-800 md:bg-transparent p-4 md:p-0 rounded-md md:rounded-none shadow-lg md:shadow-none gap-4 md:gap-8 transition-all duration-300 ${
           isMobileMenuOpen ? "flex" : "hidden md:flex"
         }`}
       >
-        {[
+        {[ 
           { to: "/", label: "Home" },
-            { to: "/ecommerce-ux-guide", label: "E-Commerce UX Guide" },
           { to: "/about", label: "About Us" },
           { to: "/projects", label: "Projects" },
           { to: "/contact", label: "Contact Us" },
-        
         ].map(({ to, label }) => (
           <li key={to}>
             <Link
@@ -63,7 +60,26 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
+
+        {/* Lead Magnet CTA (Mobile only) */}
+        <li className="md:hidden">
+          <Link
+            to="/ecommerce-ux-guide"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block bg-gradient-to-r from-indigo-500 to-cyan-500 text-white px-4 py-2 rounded-lg text-center font-semibold shadow-lg hover:opacity-90"
+          >
+            Free UX Guide
+          </Link>
+        </li>
       </ul>
+
+      {/* Lead Magnet CTA (Desktop) */}
+      <Link
+        to="/ecommerce-ux-guide"
+        className="hidden md:block bg-gradient-to-r from-indigo-500 to-cyan-500 text-white px-4 py-2 rounded-lg font-semibold shadow-lg hover:opacity-90 transition"
+      >
+        Free UX Guide
+      </Link>
     </nav>
   );
 };
