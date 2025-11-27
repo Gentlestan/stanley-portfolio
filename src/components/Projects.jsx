@@ -4,19 +4,21 @@ import salesSkillHubImg from "../assets/images/salesskill.png";
 import kitchenCompanion from "../assets/images/kitchencompanion.jpg";
 import SkillsSection from "./sections/SkillSection";
 import Testimonials from "./sections/Testimonials";
-import springmilez from "../assets/images/spring.jpg";
+import eccomm from "../assets/images/ecomm.jpg";
 import listing from "../assets/images/listing.jpg";
+import ecommnext from "../assets/images/ecomm-next.jpg"
 
 const projects = [
   {
     id: 1,
-    title: "Salesskillhub",
+    title: "eccomerce",
     description:
-      "SalesSkillHub is a sales-focused platform showcasing ad copy, lead conversion strategies, and client engagement techniques.",
-    link: "https://skill-sales-hub.vercel.app/",
-    code: "https://github.com/yourusername/sales-skillhub",
-    image: salesSkillHubImg,
-    tech: ["React", "Tailwind", "Vercel"],
+      "A fully responsive e-commerce experience built with Next.js, focused on clean UX, fast performance, and conversion-driven design. Features include product browsing, dynamic filtering, a modern cart flow, mobile-first layouts, and SEO-optimized pages for higher visibility. Built with TypeScript and Tailwind for scalability and maintainability.",
+    link: "https://alx-project-nexus-eosin.vercel.app/",
+    code: "https://github.com/Gentlestan/alx-project-nexus",
+    image: eccomm,
+    tech: ["Nextjs", "Tailwind", "SEO", "Typescript", "API"],
+
   },
   {
     id: 2,
@@ -41,13 +43,24 @@ const projects = [
 
   {
     id: 4,
-    title: "Springmillez Solar",
+    title: "Salesskillhub",
     description:
-      "A responsive business website built with React to showcase solar, CCTV, and electrical services. The site highlights company offerings, past projects, and contact options, with a clean professional design optimized for speed, SEO, and mobile accessibility.",
-    link: "https://springmilez.vercel.app/",
-    code: "https://github.com/yourusername/springmilez",
-    image: springmilez,
-    tech: ["React", "Tailwind", "SEO"],
+      "SalesSkillHub is a sales-focused platform showcasing ad copy, lead conversion strategies, and client engagement techniques.",
+    link: "https://skill-sales-hub.vercel.app/",
+    code: "https://github.com/yourusername/sales-skillhub",
+    image: salesSkillHubImg,
+    tech: ["React", "Tailwind", "Vercel"],
+  },
+   {
+    id: 5,
+    title: "eccom-next",
+    description:
+      "A fully responsive e-commerce storefront built with Next.js, designed for clean UX, fast load times, and high conversions. It includes intuitive product browsing, dynamic filters, a smooth cart flow, and mobile-first layouts. SEO-optimized pages ensure better visibility, while TypeScript and Tailwind provide scalability and maintainable code",
+    link: "https://my-eccommerce-front.vercel.app/",
+    code: "https://github.com/Gentlestan/my-eccommerce-front",
+    image: ecommnext,
+    tech: ["Nextjs", "Tailwind", "SEO", "Typescript", "API"],
+
   },
 ];
 
